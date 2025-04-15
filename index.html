@@ -1,0 +1,472 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="GeoExplorer: Active Geo-localization with Curiosity-Driven Exploration">
+  <meta property="og:title" content="GeoExplorer: Active Geo-localization with Curiosity-Driven Exploration"/>
+  <meta property="og:description" content="GeoExplorer: Active Geo-localization with Curiosity-Driven Exploration"/>
+  <meta property="og:url" content=""/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="GeoExplorer: Active Geo-localization with Curiosity-Driven Exploration">
+  <meta name="twitter:description" content="GeoExplorer: Active Geo-localization with Curiosity-Driven Exploration">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="geo-localiztion, curiosity-driven reinforcement learning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>GeoExplorer</title>
+  <link rel="icon" type="image/x-icon" href="static/images/explore.png">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+  <script type="text/x-mathjax-config"> MathJax.Hub.Config({ tex2jax: {inlineMath: [['$','$'],['\\(','\\)']]} }); </script> <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <div style="display: flex; align-items: center; justify-content: center;">
+              <img src="static/images/explore.png" style="height: 60px; margin-right: 10px; margin-top: -10px;">
+              <h1 class="title is-1 publication-title"><b>GeoExplorer:</b></h1>
+            </div>
+            <h2 class="title is-3 has-text-centered"><b>Active Geo-localization with Curiosity-Driven Exploration</b></h2>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://limirs.github.io/" target="_blank">Li Mi</a></sup>,</span>
+              <span class="author-block">
+                <a href="https://people.epfl.ch/manon.bechaz?lang=en" target="_blank">Manon Béchaz</a></sup>,</span>
+              <span class="author-block">
+                <a href="https://eric11eca.github.io/" target="_blank">Zeming Chen</a></sup>,</span>
+              <span class="author-block">
+                <a href="https://atcbosselut.github.io/" target="_blank">Antoine Bosselut</a>,</span>
+              <span class="author-block">
+                <a href="https://people.epfl.ch/devis.tuia" target="_blank">Devis Tuia</a></span>
+              </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">EPFL, Switzerland</span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">
+                      <p><br></p>
+                      <a href="https://www.epfl.ch/en/"><img src="static/images/Fig_EPFL_Red.png" width="150px"  margin-left="20px"  margin-right="20px" alt="EPFL Logo"/></a></span>
+                      <a href="http://www.epfl.ch/labs/eceo/"><img src="static/images/Fig_ECEO.png" width="150px" margin-left="20px" margin-right="20px" alt="ECEO Logo"/></a></span>
+                      <a href="https://nlp.epfl.ch/"><img src="static/images/Fig_NLP.png" width="70px"  margin-left="20px" margin-right="20px" alt="NLP Logo"/></a></span>
+                  </div>
+
+                  <!---TODO ECEO LOGO, and change logo from red/white invert, put pipeline image-->
+                 <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+<!--                       <span class="link-block">
+                        <a href="" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Pre-Print</span>
+                      </a>
+                    </span>
+ -->
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (Coming Soon)</span>
+                  </a>
+                  </span>
+
+                  <!-- Dataset link -->
+                  <span class="link-block">
+                    <a href="https://huggingface.co/datasets/EPFL-ECEO/SwissView" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                    <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" 
+                    alt="Hugging Face" 
+                    width="20" height="20">
+                    </span>
+                    <span>Dataset</span>
+                    </a>
+                  </span>
+
+                <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                <div class="column is-four-fifths">
+                <div class="content has-text-justified">
+                  <p><br></p>
+                <p>
+                <div align="center">
+                <b style="font-size:21px; ">GeoExplorer combines 
+                  <span style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
+                    goal-oriented reward
+                  </span> 
+                  and 
+                  <span style="text-shadow: 2px 2px 4px rgba(255, 0, 0, 0.5); color: #792714">
+                    curiosity-driven reward
+                  </span>
+                  <br> 
+                to address the task of Active Geo-localization</b> 
+                <p><br></p>
+                </div>
+                <div align="center">
+                <img src="static/images/Fig_Summary.png" alt="An Overview of ConGeo" width="80%"/>
+                </div> 
+                Integrating curiosity-driven rewards with goal-oriented rewards introduces an essential trade-off between 
+                <span style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
+                    following the direct, goal-oriented guidance
+                </span> 
+                and 
+                <span style="text-shadow: 2px 2px 4px rgba(255, 0, 0, 0.5); color: #792714">
+                    engaging in exploratory behavior.
+                </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-centered">Active Geo-localization</h2>
+        <div class="content has-text-justified">
+        <p><b>Active Geo-Localization (AGL)</b> within a goal-reaching <b>reinforcement learning (RL)</b> context.<br>
+          <b>(a)</b> AGL focuses on localizing a target (<b>goal</b>), within a predefined search area (<b>environment</b>) presented in the bird’s eye view, by navigating the agent towards it. At a given time, the agent observes a <b>state</b>, i.e., a patch representing a limited observation of the environment, and selects an <b>action</b>, i.e., a decision that modifies the agent position and the observed state. 
+        <br>  
+          <b>(b)</b> The location of the goal is unknown during infrerence but its content can be described in various modalities:
+        </p>
+        <ul>
+          <li><b>I:</b> aerial image patches.</li>
+          <li><b>G:</b> ground-level images.</li>
+          <li><b>T:</b> textual descriptions.</li>
+        </ul>
+          <div align="center">
+            <img src="static/images/Fig_Task.png" alt="Active Geo-localization" width="90%"/>
+          </div>
+       </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- End paper abstract -->
+
+
+
+<!-- Method -->
+<section class="section hero">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">GeoExplorer</h2>
+          <div class="content has-text-justified">
+
+            <p>
+            In this work, we introduce GeoExplorer, an AGL agent that:
+            <ul>
+              <li><b>1)</b> jointly predicts the <b>action-state dynamics</b></li>
+              <li><b>2)</b> explores the search region with a <b>curiosity-driven reward</b></li>
+            </ul>
+            </p>
+
+            <figure class="image mod-figure">
+              <img src="static/images/Fig_Pipeline.png" alt="Modalities overview" width="110%">
+            </figure>
+            <p>
+            The learning process can be divided into three stages sequentially: feature representation, Action-State Dynamics Modeling (DM), and Curiosity-Driven Exploration (CE).<br>
+            <b>(a) Feature Representation.</b> The environment (st) and goal (sgoal) are encoded with different but aligned encoders, according to their modalities (e.g., aerial images (Igoal), ground-level images (Ggoal), or text (Tgoal)).<br>
+            <b>(b) Action-State Dynamics Modeling.</b> A causal Transformer is trained to jointly capture action-state dynamics, guided by supervision from generated action-state trajectories for environment modeling.<br>
+            <b>(c) Curiosity-Driven Exploration.</b> Based on state prediction from (b), a curiosity-driven intrinsic reward (rin) is used to encourage the agent to explore the environment by measuring the t differences between prediction and observations. 
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Method -->
+
+
+<!-- Dataset -->
+<section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">SwissView Dataset</h2>
+          <div class="content has-text-justified">
+
+            <figure class="image mod-figure">
+              <img src="static/images/Fig_Swissimage.png" alt="Modalities overview" width="60%">
+            </figure>
+            <p>
+            Our proposed SwissView dataset is constructed from Swisstopo’s SWISSIMAGE 10cm imagery, with two distinct components:
+            <ul>
+              <li><b>SwissView100</b>, which comprises 100 images randomly selected from across the Swiss territory, thereby providing diverse natural and urban environment.</li>
+              <li><b>SwissViewMonuments</b>, which includes 15 images of atypical or distinctive scenes, such as unusual buildings and landscapes, with corresponding ground level images.</li>
+            </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Dataset -->
+
+<!-- Results -->
+<section class="section hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Results</h2>
+          
+          <div class="content has-text-justified">
+          <p>
+
+            We evaluate GeoExplorer in four settings:
+            <ul>
+              <li><b>Validation</b>: we evaluate the model on the same dataset as it is trained.</li>
+              <li><b>Cross-domain Transfer</b>: the model trained on the Masa dataset is evaluated on an unseen dataset using aerial view as goal modality.</li>
+              <li><b>Cross-modal Generalization</b>: the goal is presented from different modalities.</li>
+              <li><b>Unseen Target Generalization</b>: to evaluate the models’ adaptation to the unseen targets, we evaluate the model on our SwissView dataset, with aerial view and ground-level images.</li>
+            </ul>
+          </p>
+        </div>
+
+        <p><br></p>
+
+            <h4 class="subtitle">
+              <b>1. Validation and Cross-domain Generalization</b>
+            </h4>
+
+            <figure class="image mod-figure">
+              <img src="static/images/WFig_cross-domain.png" alt="Modalities overview" width="60%">
+            </figure>
+            <p style="font-size:13px; ">
+              Average success rate of GeoExplorer and the baseline over start-goal distance between 4 to 8 (C=4 to C=8) on the validation (Masa dataset) and cross-domain generalization (x-BD and Swiss-view100 datasets).
+            </p>
+
+
+            <p><br></p>
+            <h4 class="subtitle">
+              <b>2. Multimodal Generalization Generalization</b>
+            </h4>
+
+            <figure class="image mod-figure">
+              <img src="static/images/WFig_cross-modal.png" alt="Modalities overview" width="60%">
+            </figure>
+            <p style="font-size:13px; ">
+              Average success rate of GeoExplorer and the baseline over start-goal distance between 4 to 8 (C=4 to C=8) on the cross-modal generalization (MM-GAG dataset). Green, Blue and Yellow denote aerial image, ground-level image and text as the goal, respectively.
+            </p>
+
+            <p><br></p>
+            <div class="finding-box mb-4" style="background-color: #e6f1f8;">
+            <p class="finding-content">
+              <div style="text-align: left;"><b>Takeaway I:</b> GeoExplorer with curiosity-driven intrinsic reward shows improved cross-domain and cross-modal generalization ability over baseline model with extrinsic reward only.
+              </div>
+            </p>
+            </div>
+
+
+
+            <p><br></p>
+            <h4 class="subtitle">
+              <b>3. Unseen Target Generalization</b>
+            </h4>
+
+            <figure class="image mod-figure">
+              <img src="static/images/WFig_unseen.png" alt="Modalities overview" width="60%">
+            </figure>
+            <p style="font-size:13px; ">
+              Average success rete of GeoExplorer and the baseline when C=4, C=5, and C=6 on the SwissViewMonuments dataset: (a) Aerial view as the goal; (b) Ground-level image as the goal.
+            </p>
+
+
+            <p><br></p>
+            <div class="finding-box mb-4" style="background-color: #e6f1f8;">
+            <p class="finding-content">
+              <div style="text-align: left;"><b>Takeaway II:</b> GeoExplorer exhibits an impressive generalization ability in localizing unseen targets, especially when the path is long.
+              </div>
+            </p>
+            </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+  <!-- End Results -->
+
+
+
+<!-- Analysis -->
+<section class="section hero">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Does intrinsic reward improve exploration?</h2>
+          <div class="content has-text-justified">
+          <p>
+            To provide insights of intrinsic reard and its impact on exploration, we design the following analysis and visualization:
+            <ul>
+              <li><b>Generated Path Visualization</b>: we visualize the generated paths of baseline and GeoExplorer, which visualize the exploration behaviour of models.</li>
+              <li><b>Path Statistics</b>: we count the visited patches and end patches of all generated path, which indicates the coverage region of exploration within search area.</li>
+              <li><b>Intrinsic Reward Visualization and Grounding</b>: we visualize the average intrinsic reward per patch, which provides a further understanding grounding of intrinsic reward on the exploration paths.</li>
+            </ul>
+          </p>
+        </div>
+          
+          <p><br></p>
+          <h4 class="subtitle">
+              <b>1. Visualization of Exploration Ability</b>
+          </h4>
+
+
+          <figure class="image mod-figure">
+              <img src="static/images/SFig_Unseen.png" alt="Modalities overview" width="60%">
+          </figure>
+          <p style="font-size:13px; ">
+            <b>Generated path visualization on the SwissViewMonuments dataset.</b> Given a pair of {start (◦), goal (△)} per search area, models generate four trials with stochastic policy, randomly shown in four different colors. Compared with the baseline, the paths generated by GeoExplorer are more robust (adapted to various envrionment), diverse (different paths for the same {start, goal} pairs) and content-aware (related to state observations).
+          </p>
+
+
+          <p><br></p>
+            <div class="finding-box mb-5" style="background-color: #e6f1f8;">
+            <p class="finding-content">
+              <div style="text-align: left;"><b>Takeaway III:</b> GeoExplorer shows robust, diverse, and content-related exploration ability.
+              </div>
+            </p>
+            </div>
+
+          <figure class="image mod-figure">
+              <img src="static/images/SFig_Path.png" alt="Modalities overview" width="60%">
+          </figure>
+          <p style="font-size:13px; ">
+             <b>Statistics of the path end and path visited on the Masa dataset.</b> (a) Statistics of the path end. We count the end location of the 895 paths in the Masa dataset test set for ground truth (goal location), GOMAA-Geo and GeoExplorer when C = 4 and C = 8. (b) Statistics of the path visited. We count all the visited patches of 895 paths in the Masa dataset test set for GOMAA-Geo and GeoExplorer when C = 4 and C = 8.
+          </p>
+
+
+          <p><br></p>
+            <div class="finding-box mb-4" style="background-color: #e6f1f8;">
+            <p class="finding-content">
+              <div style="text-align: left;"><b>Takeaway IV:</b> With intrinsic reward that encourages environment exploration, GeoExplorer tends to explore more patches in the search areas, especially the patches in the center, indicating a improved exploration ability.
+              </div>
+            </p>
+            </div>
+
+          
+
+
+          <p><br></p>
+          <h4 class="subtitle">
+              <b>2. Analysis of Intrinsic Reward</b>
+          </h4>
+
+          <figure class="image mod-figure">
+              <img src="static/images/SFig_Reward.png" alt="Modalities overview" width="60%">
+          </figure>
+          <p style="font-size:13px; ">
+             <b>Intrinsic reward visualization with images from the SwissViewMonuments dataset.</b> For each sample, from left to right: the search area, path visualization and intrinsic reward per patch. The patch with the highest intrinsic reward is highlighted with an orange rectangle in the search area. Patches with higher intrinsic reward turn out to be more “interesting”, i.e., the semantic content of these patches can hardly be predicted 546 from the surrounding patches.
+          </p>
+
+
+          <p><br></p>
+            <div class="finding-box mb-4" style="background-color: #e6f1f8;">
+            <p class="finding-content">
+              <div style="text-align: left;"><b>Takeaway V:</b> Curiosity-driven intrinsic rewards provide dense, goal-agnostic, and content-related guidance to enhance the exploration ability of GeoExplorer.
+              </div>
+            </p>
+            </div>
+
+
+
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Analysis -->
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@misc{mi2025geoexplorer,
+        title = {GeoExplorer: Active Geo-localization with Curiosity-Driven Exploration},
+        author = {Mi, Li and Béchaz, Manon and Chen, Zeming and Bosselut, Antoine and Tuia, Devis},
+        url = {https://limirs.github.io/GeoExplorer/},
+        year = {2025}
+}</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the template of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
+
