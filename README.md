@@ -1,9 +1,9 @@
 # GeoExplorer
 PyTorch implementation of _GeoExplorer:Active Geo-localization with Curiosity-Driven Exploration_ (ICCV 2025)
 
-## Installation
+## Running
 
-You can use the following commands to install the necessary dependencies to run the code:
+Set-up:
 ```bash
 conda create --name geoexplorer
 conda activate geoexplorer
