@@ -1,4 +1,4 @@
-# GOMAA-Geo
+# GeoExplorer
 PyTorch implementation of _GeoExplorer:Active Geo-localization with Curiosity-Driven Exploration_ (ICCV 2025)
 
 ## Installation
