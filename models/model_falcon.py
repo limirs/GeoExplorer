@@ -1359,11 +1359,8 @@ class FalconForCausalLM(FalconPreTrainedModel):
             distance_preds = self.distance_pred(hidden_states[:, 1::2])
             state_preds = hidden_states[:, 2::2] # state prediction
             state_gt = inputs_embeds[:, 2:] # state gt
-            #print(state_preds.shape, state_gt.shape, distance_preds.shape)
             return distance_preds, state_preds, state_gt
-        return hidden_states[:, -1], hidden_states[:, -2], inputs_embeds[:, -1] # new 2025-07-29
-        #return hidden_states[:, -1], inputs_embeds[:, -2], inputs_embeds[:, -1] # original
-        #return hidden_states[:, -1]
+        return hidden_states[:, -1], hidden_states[:, -2], inputs_embeds[:, -1]
 
     def _reorder_cache(
         self, past: Tuple[Tuple[torch.Tensor, torch.Tensor], ...], beam_idx: torch.LongTensor

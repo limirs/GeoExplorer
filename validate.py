@@ -39,9 +39,8 @@ if __name__=='__main__':
 
     valid_path = cfg.data.test_path
 
-    if cfg.dataset == 'swisstopo-unseen':
+    if cfg.dataset == 'swissviewmonuments':
         ground_path = cfg.data.ground_embeds_path
-        text_path = cfg.data.text_embeds_path
     
     import time
 
@@ -55,15 +54,13 @@ if __name__=='__main__':
         seed_everything(cfg.train.hparams.random_seed)
         
 
-        if cfg.dataset == 'swisstopo-unseen':
+        if cfg.dataset == 'swissviewmonuments':
             config = generate_config_unseen(cfg.data.test_path, GOAL_PATCH_LIST, patch_size=cfg.data.patch_size, dist=d, n_config_per_img=cfg.num_config_per_img)
-            # print("===================aerial view====================")
-            # cur_val_success, res = ppo_agent.validate_unseen(config, valid_path, n_config_per_img=cfg.num_config_per_img)
-            # print(f"dist={d}")
-            # print("===================ground view====================")
-            # cur_val_success = ppo_agent.validate_ground_unseen(config, valid_path, ground_path, n_config_per_img=cfg.num_config_per_img)
-            # print(f"dist={d}")
-            cur_val_success = ppo_agent.validate_text_unseen(config, valid_path, text_path, n_config_per_img=cfg.num_config_per_img)
+            print("===================aerial view====================")
+            cur_val_success, res = ppo_agent.validate_unseen(config, valid_path, n_config_per_img=cfg.num_config_per_img)
+            print(f"dist={d}")
+            print("===================ground view====================")
+            cur_val_success = ppo_agent.validate_ground_unseen(config, valid_path, ground_path, n_config_per_img=cfg.num_config_per_img)
             print(f"dist={d}")
         
         else:    

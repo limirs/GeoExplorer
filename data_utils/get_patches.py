@@ -24,8 +24,8 @@ def get_patches(img_path, patch_size=5, save_path="patches_images"):
         img_save = Image.fromarray(patch[i, :, :, :].transpose(1, 2, 0)).resize((300,300),Image.BICUBIC)
         img_save.save(os.path.join(save_path, f"patch_{i}.jpg"))
 
-def get_patches_multiple_images(path="../data/swisstopo/",
-                                img_path="../data/swisstopo/images_shifted/images/",
+def get_patches_multiple_images(path="../data/swissview/swissview100_patches",
+                                img_path="../data/swissview/SwissView100/",
                                 patch_size=5):
 
     filelist = sorted(os.listdir(img_path))
@@ -33,25 +33,6 @@ def get_patches_multiple_images(path="../data/swisstopo/",
     for i in range(len(filelist)):
         file = filelist[i]
         get_patches(os.path.join(img_path, file), save_path=os.path.join(path, f"patches/img_{i}"), patch_size=patch_size)
-
-def get_patches_directory(path="data",
-                          img_path="data/test/images",
-                          patch_size=10):
-    l = sorted(glob.glob(os.path.join(img_path, '*.png')))
-
-    print(l[:5])
-    for i in range(len(l)):
-        get_patches(l[i], save_path=os.path.join(path, f"patches_sat/img_{i}"), patch_size=patch_size)
-
-def get_patches_sat_ground(path="data",
-                          img_path="data/test/images",
-                          patch_size=5):
-    l = sorted(glob.glob(img_path))
-
-    print(l[:5])
-    for i in range(len(l)):
-        get_patches(glob.glob(os.path.join(l[i],"stitch*"))[0], save_path=os.path.join(path, f"patches_sat/img_{i}"), patch_size=patch_size)
-
 
 if __name__=='__main__':
     fire.Fire(get_patches_multiple_images)

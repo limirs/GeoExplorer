@@ -10,8 +10,6 @@ from torch.utils.data import DataLoader
 import numpy as np
 from torch.optim.lr_scheduler import CosineAnnealingWarmRestarts
 
-import wandb
-
 def neg_log(x):
     return -torch.log(x + 1e-5)
 
@@ -53,13 +51,11 @@ class MaskedActionModeling(LightningModule):
     def training_step(self, batch, batch_idx):
         loss, loss_action, loss_state = self.shared_step(batch, batch_idx)
         self.log('train_loss', loss, prog_bar=True, on_epoch=True, sync_dist=True, batch_size=self.batch_size)
-        wandb.log({"train_loss": loss, "train_loss_action": loss_action, "train_loss_state": loss_state})
         return {"loss": loss}
 
     def validation_step(self, batch, batch_idx):
         loss, loss_action, loss_state = self.shared_step(batch, batch_idx)
         self.log('val_loss', loss, prog_bar=True, on_epoch=True, sync_dist=True, batch_size=self.batch_size)
-        #wandb.log({"val_loss": loss, "val_loss_action": loss_action, "val_loss_state": loss_state})
         
         return {"loss": loss, "num_correct": loss_action, "num_total": loss_state}
 

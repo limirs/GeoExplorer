@@ -117,16 +117,12 @@ if __name__=='__main__':
                 # ==================inreward cos======================
                 #reward_in = -(2*(F.cosine_similarity(state_gt, state_preds).item()) -1.0)*0.5
                 # ==================inreward mse======================
-                # roughly normalize the mse loss to [-0.5, 0.5]
                 reward_in = (2*((F.mse_loss(state_preds, state_gt).item() - 0.8) / 0.1) - 1.0)*0.25
                 
                 if cfg.reward == 'ex':
                     reward = reward_ex
-                elif cfg.reward == 'in':
-                    
+                elif cfg.reward == 'in':                   
                     reward = reward_in*cfg.factor + reward_ex
-
-                #print("in", reward_in, "ex", reward)
                 
                 #if reward==1:
                 if reward>=0.6:

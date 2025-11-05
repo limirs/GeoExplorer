@@ -7,8 +7,8 @@ import fire
 from transformers import CLIPVisionModelWithProjection, CLIPProcessor
 import os
 
-def get_ground_embeddings(data_path="../data/swissview/ground_images/",
-                       save_path="../data/swissview/grd_swisstopo.npy",
+def get_ground_embeddings(data_path="../data/swissview/SwissViewMonuments/ground_view/",
+                       save_path="../data/swissview/swissviewmonuments_grd.npy",
                        device="cuda:0"):
 
     model = CLIPVisionModelWithProjection.from_pretrained("openai/clip-vit-base-patch32")
