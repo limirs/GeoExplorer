@@ -12,8 +12,10 @@ conda env create -f environment.yml
 ```
 
 Data preparation:
+
 Please follow the repo of [GOMAA-Geo](https://github.com/mvrl/GOMAA-Geo) to do the data preprocessing for the Masa, xBD and MM-GAG datasets.
 For the SwissView dataset, please download the images from the Huggingface Repo [SwissView](https://huggingface.co/datasets/EPFL-ECEO/SwissView).
+
 To process the aerial images:
 1) get patches
 set `path="../data/swissview/swissview100_patches"`, `img_path="../data/swissview/SwissView100/"` for SwissView100, and set `path="../data/swissview/swissviewmonuments_patches"`, `img_path="../data/swissview/SwissViewMonuments/aerial_view"` for SwissViewMonuments.
@@ -27,6 +29,7 @@ login with your Hugging Face token `login("HuggingFace_Token_Here")`; set `data_
 python get_sat_embeddings.py
 ```
 
+To process the ground images:
 3) get features for ground views (SwissViewMonuments only)
 set `data_path="../data/swissview/SwissViewMonuments/ground_view/"`, `save_path="../data/swissview/swissviewmonuments_grd.npy"`
 ```bash
@@ -35,6 +38,7 @@ python get_grd_embeddings.py
 
 
 Training and Validation:
+
 To train the model for action-state modeling:
 ```bash
 python pretrain.py
@@ -55,18 +59,20 @@ python validate.py
 We would like to thank the authors of GOMMA-Geo for providing the code basis of this work. If you find this work helpful, please consider citing:
 
 ```bibtex
-@article{mi2025geoexplorer,
-      title={{GeoExplorer}: Active Geo-localization with Curiosity-Driven Exploration}, 
-      author={Li Mi and Manon Béchaz and Zeming Chen and Antoine Bosselut and Devis Tuia},
-      year={2025},
-      journal={arXiv preprint arXiv:2508.00152},
+@inproceedings{mi2025geoexplorer,
+  title={GeoExplorer: Active Geo-localization with Curiosity-Driven Exploration},
+  author={Mi, Li and B{\'e}chaz, Manon and Chen, Zeming and Bosselut, Antoine and Tuia, Devis},
+  booktitle={ICCV},
+  pages={6122--6131},
+  year={2025}
 }
 ```
 ```bibtex
-@article{sarkar2024gomaa,
-  title={GOMAA-Geo: GOal Modality Agnostic Active Geo-localization},
+@inproceedings{sarkar2024gomaa,
+  title={Gomaa-geo: Goal modality agnostic active geo-localization},
   author={Sarkar, Anindya and Sastry, Srikumar and Pirinen, Aleksis and Zhang, Chongjie and Jacobs, Nathan and Vorobeychik, Yevgeniy},
-  journal={arXiv preprint arXiv:2406.01917},
+  booktitle={NeurIPS},
+  pages={104934--104964},
   year={2024}
 }
 ```
