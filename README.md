@@ -5,9 +5,6 @@ PyTorch implementation of _GeoExplorer: Active Geo-localization with Curiosity-D
 
 Set-up the environment:
 ```bash
-conda create --name geoexplorer
-conda activate geoexplorer
-conda install python==3.11
 conda env create -f environment.yml
 ```
 
@@ -37,6 +34,8 @@ python get_grd_embeddings.py
 
 
 Training and Validation:
+
+Set configurations and parameters in `config.py`, `cfg.dataset == 'masa'` for training, `cfg.dataset == 'swissview'` or `cfg.dataset == 'swissviewmonuments'` for validation.
 
 To train the model for action-state modeling:
 ```bash
