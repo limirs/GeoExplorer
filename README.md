@@ -10,7 +10,7 @@ conda env create -f environment.yml
 
 Data preparation:
 
-Please follow the repo of [GOMAA-Geo](https://github.com/mvrl/GOMAA-Geo) to do the data preprocessing for the Masa, xBD and MM-GAG datasets.
+Please follow the repo of [GOMAA-Geo](https://github.com/mvrl/GOMAA-Geo) and [AirLoc] (https://github.com/aleksispi/airloc) to do the data preprocessing for the Masa, xBD and MM-GAG datasets.
 For the SwissView dataset, please download the images from the Huggingface Repo [SwissView](https://huggingface.co/datasets/EPFL-ECEO/SwissView).
 
 
