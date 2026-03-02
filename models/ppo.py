@@ -454,7 +454,7 @@ class PPO(nn.Module):
                     current_patch_id = seq.patch_sequence[-1]
                     prev_patch_id = seq.patch_sequence[-2]
                     goal_patch_id = seq.patch_sequence[0]
-                    reward_in = (2*((F.mse_loss(state_preds, state_gt).item() -0.005) / 0.08) - 1.0)*0.25
+                    reward_in = (2*((F.mse_loss(state_preds, state_gt).item() - 0.8) / 0.1) - 1.0)*0.25
                     #reward_in = -(2*(F.cosine_similarity(state_gt, state_preds).item()) -1.0)
                     reward_ex = self.get_reward(cfg.data.patch_size, prev_patch_id, current_patch_id, goal_patch_id, seq.patch_sequence[1:-1], best_dist)
                     if cfg.reward == 'ex':
